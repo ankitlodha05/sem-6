@@ -1,0 +1,7 @@
+trigger CapitalizeName on student__c (before insert) {
+    for(Student__c student : Trigger.new) {
+        if(student.name__c != null) {
+            student.name__c = student.name__c.toUpperCase();
+        }
+    }
+}
